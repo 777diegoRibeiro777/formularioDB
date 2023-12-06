@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
+}
+
+.grupo{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+#titulo {
+    font-family: sans-serif;
+    color: #380B61;
+} 
+
+#subtitulo {
+    font-family: sans-serif;
+    color: #380B61;
+} 
+
+#check{
+    display: inline-block;
+}
+
+fieldset {
+    border: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: lightgreen;
+    font-family: sans-serif;
+    font-size: 1em;
+    color: #59429d;
+    margin-top: 2%;
+    justify-content: center;
+}
+
+input, select, textarea, button {
+    font-family: sans-serif;
+    font-size: 1em;
+    color: #59429d;
+    border-radius: 5px;
+}
+
+.grupo:before, .grupo:after {
+    display: table;
+}
+
+.grupo:after {
+    clear: both;
+}
+
+.campo {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.campo label {
+    margin-bottom: 0.2em;
+    color: #59429d;
+}
+
+fieldset.grupo .campo {
+    float:  left;
+    margin-right: 1em;
+}
+
+.campo input[type="text"], .campo select, .campo textarea {
+    padding: 0.2em;
+    border: 1px solid #59429d;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+
+}
+
+.campo select option {
+    padding-right: 1em;
+}
+
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    background: #E0E0F8;
+}
+
+.botao {
+    font-size: 1.2em;
+    font-weight: 600;
+    background: #59429d;
+    border: none !important;
+    color: #ffffff;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    margin: 0 !important;    
+}
+
+.botao:hover {
+    background-color: rgb(197, 23, 245);
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: none;
+    transform: scale(1.05);
+    transition: all linear 160ms;
+}
+
+.botao, select{
+    cursor: pointer;
+}
+
+#campo-genero{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+input::placeholder{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
