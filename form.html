@@ -1,0 +1,84 @@
+<?php
+
+if(isset($_POST["submit"])) 
+{
+    include_once("config.php");
+
+    $nome = $_POST['nome'];
+    $sobrenome = $_POST['sobrenome'];
+    $email = $_POST['email'];
+    $cpf = $_POST['CPF'];
+    $genero = $_POST['genero'];
+    $senioridade = $_POST['senioridade'];
+
+    $dados = mysqli_query($conection, "INSERT INTO aplicante(Nome,Sobrenome,CPF,Genero,Senioridade,Email) VALUES ('$nome','$sobrenome','$cpf','$genero','$senioridade','$email')");
+
+}
+?>
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="formStyle.css" media="screen">
+        <title>Cadastro</title>
+    </head>
+    <body>
+        <form action="form.php" method="post" class="formLogin">
+            <div>
+                <h1 id="titulo">Cadastro de informações</h1>
+                <p id="subtitulo">Complete os campos com a sua informação</p>
+                <br>
+            </div>
+            <form>
+                <fieldset class="grupo">
+                    <div class="campo">
+                        <label for="nome"><strong>Nome</strong></label>
+                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="campo">
+                        <label for="sobrenome"><strong>Sobrenome</strong></label>
+                        <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
+                    </div>
+                    <div class="campo">
+                        <label for="email"><strong>Email</strong></label>
+                        <input type="text" name="email" id="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="campo">
+                        <label for="email"><strong>CPF</strong></label>
+                        <input type="text" name="CPF" id="CPF" maxlength="14" oninput="formatarCpf(this)" placeholder="Digite seu CPF" required>
+                    </div>
+                </fieldset> 
+                <div class="campo">
+                    <label><strong>Selecione o seu gênero</strong></label>
+                </div>
+                <div class="campo" id="campo-genero">
+                    <label>
+                        <input type="radio" name="genero" value="masculino">Masculino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="feminino">Feminino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="indefinido">Indefinido
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="outro">Outro
+                    </label>
+                </div>
+                <div class="campo">
+                    <label for="senioridade"><strong>Senioridade</strong></label>
+                    <select name="senioridade" id="senioridade" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option>Júnior</option>
+                        <option>Pleno</option>
+                        <option>Sênior</option>
+                    </select>
+                </div>
+                <button class="botao" name="submit" type="submit" id="liveAlertBtn" onsubmit="">Concluído</button>           
+            </form>
+        </form>
+        <script src="script.js"></script>  
+    </body>
+</html>
